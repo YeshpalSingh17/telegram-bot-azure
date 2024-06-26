@@ -1,9 +1,6 @@
 pyrogram
 python-dotenv
 flask
-<<<<<<< HEAD
 gunicorn
-wfastcgi
-=======
-gunicorn
->>>>>>> 77623ca8bd6d3ca2d2afb36c89cac927fb769966
+
+
