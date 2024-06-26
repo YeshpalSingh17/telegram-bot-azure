@@ -25,14 +25,6 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
       
-    - name: Upload artifact for deployment jobs
-      uses: actions/upload-artifact@v2
-      with:
-        name: python-app
-        path: |
-          . 
-          !venv/
-
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
