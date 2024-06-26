@@ -6,8 +6,8 @@ import logging
 from dotenv import load_dotenv
 import os
 from pyrogram import Client, filters, idle
-# from flask_app import app
-
+from flask_app import app
+import threading
 # Load environment variables from .env file
 load_dotenv()
 
@@ -80,11 +80,23 @@ def handle_messages(client, message):
     else:
         bot.send_message(user_id, "Please enter /start to start the bot.")
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
+#     logger.info("Telegram bot started")
+#     # Run the Telegram bot
+#     bot.start()
+#     logger.info("Bot started, now running idle")
+#     idle()
+
+
+if __name__ == "__main__":
+    logger.info("Flask client started")
+    # Start the Flask app in a separate thread
+    flask_thread = threading.Thread(target=app.run, kwargs={'host': '0.0.0.0', 'port': 8000})
+    flask_thread.start()
+    
     logger.info("Telegram bot started")
     # Run the Telegram bot
     bot.start()
     logger.info("Bot started, now running idle")
     idle()
-    
