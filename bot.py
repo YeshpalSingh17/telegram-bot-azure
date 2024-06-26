@@ -38,10 +38,10 @@ API_HASH = os.getenv("API_HASH")
 
 def init_bot():
     return Client(
-    "m21bot",
+    "yeshpal_bot",
     bot_token=BOT_TOKEN, 
-    api_id=2854217,
-    api_hash="ac6df80f6d704e9164503dabe3dcded6"
+    api_id=21588567,
+    api_hash="78240039842b973f5139136864b6648f"
 )
 
 
